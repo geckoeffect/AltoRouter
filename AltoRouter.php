@@ -207,7 +207,7 @@ class AltoRouter {
 				// @ regex delimiter
 				$pattern = '`' . substr($route, 1) . '`u';
 				$match = preg_match($pattern, $requestUrl, $params) === 1;
-			} elseif (($position = strpos($route, '[')) === false) {
+			} elseif (($position = strpos($route, '/[')) === false) {
 				// No params in url, do string comparison
 				$match = strcmp($requestUrl, $route) === 0;
 			} else {
